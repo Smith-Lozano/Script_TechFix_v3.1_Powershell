@@ -1,0 +1,90 @@
+🔧 SOLUCIÓN ERROR DE EJECUCIÓN EN POWERSHELL
+Script TechFix_v3.1
+
+📌 PROBLEMA COMÚN
+Al ejecutar el script por primera vez, puede aparecer este error:
+"File Ejecutar.ps1 cannot be loaded because running scripts is disabled on this system."
+
+---
+
+🚀 SOLUCIONES RÁPIDAS
+
+OPCIÓN 1 - SOLUCIÓN AUTOMÁTICA (RECOMENDADA)
+────────────────────────────────────────────
+1. Ejecute PowerShell COMO ADMINISTRADOR
+2. Copie y pegue ESTE comando:
+   Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+3. Presione ENTER
+4. Cierre PowerShell y ejecute el script nuevamente
+
+OPCIÓN 2 - SOLUCIÓN TEMPORAL
+─────────────────────────────
+1. Ejecute PowerShell normal
+2. Copie y pegue ESTE comando:
+   Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
+3. Presione ENTER
+4. Ejecute el script inmediatamente (solo funcionará esta vez)
+
+OPCIÓN 3 - EJECUCIÓN DIRECTA
+─────────────────────────────
+1. Abra CMD o PowerShell
+2. Ejecute este comando:
+   powershell -ExecutionPolicy Bypass -File "Ejecutar.ps1"
+3. El script se ejecutará sin problemas
+
+---
+
+🛠️ SOLUCIONES AVANZADAS
+
+PARA TODOS LOS USUARIOS (Requiere Admin)
+────────────────────────────────────────
+Ejecute como Administrador:
+Set-ExecutionPolicy RemoteSigned -Scope LocalMachine -Force
+
+VER ESTADO ACTUAL
+─────────────────
+Get-ExecutionPolicy -List
+
+RESTAURAR CONFIGURACIÓN PREDETERMINADA
+──────────────────────────────────────
+Set-ExecutionPolicy Restricted -Scope LocalMachine -Force
+
+---
+
+📋 COMANDOS PARA COPIAR Y PEGAR
+
+► Solución permanente (Usuario actual):
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+
+► Solución permanente (Todos los usuarios):
+Set-ExecutionPolicy RemoteSigned -Scope LocalMachine -Force
+
+► Solución temporal (Solo esta vez):
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
+
+► Ejecutar script sin cambiar políticas:
+powershell -ExecutionPolicy Bypass -File "Ejecutar.ps1"
+
+---
+
+⚠️ INFORMACIÓN IMPORTANTE
+
+• "RemoteSigned" permite ejecutar scripts locales libremente
+• Solo se requieren permisos de administrador para afectar a todos los usuarios
+• La solución para "CurrentUser" no requiere administrador
+• En entornos corporativos, consulte con su departamento de TI
+
+---
+
+🎯 PASOS CONCRETOS
+
+1. Haga clic en Inicio
+2. Escriba "PowerShell"
+3. Haga clic derecho en "Windows PowerShell"
+4. Seleccione "Ejecutar como administrador"
+5. Pegue el comando de la OPCIÓN 1
+6. Cierre y vuelva a abrir el script
+
+---
+
+Smith Lozano - Versión 3.1
